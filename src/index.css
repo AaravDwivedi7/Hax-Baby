@@ -1,0 +1,366 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #fff8f1;
+    --bg-secondary: #fef4e8;
+    --bg-surface: #ffffff;
+    --bg-surface-soft: #fbf0e4;
+    --text-primary: #402c25;
+    --text-secondary: #6e544b;
+    --text-muted: #9c8278;
+    --accent-berry: #a34063;
+    --accent-berry-hover: #8f3454;
+    --accent-blush: #f4d7df;
+    --accent-rose: #dba7b9;
+    --accent-gold: #f5c96a;
+    --accent-gold-soft: #fcf1d8;
+    --accent-lavender: #c7b6df;
+    --border-color: #f0dfcf;
+    --border-subtle: #f5e9dc;
+    --card-shadow: 0 4px 20px -2px rgba(92, 64, 51, 0.06), 0 2px 6px -1px rgba(92, 64, 51, 0.04);
+    --lantern-glow: rgba(245, 201, 106, 0.35);
+  }
+
+  .dark {
+    --bg-primary: #201d39;
+    --bg-secondary: #1a1730;
+    --bg-surface: #302847;
+    --bg-surface-soft: #28213d;
+    --text-primary: #fcf8f2;
+    --text-secondary: #dcd2ea;
+    --text-muted: #a69bb8;
+    --accent-berry: #dba7b9;
+    --accent-berry-hover: #edd3dd;
+    --accent-blush: #473859;
+    --accent-rose: #c7b6df;
+    --accent-gold: #f5c96a;
+    --accent-gold-soft: #3d3428;
+    --accent-lavender: #c7b6df;
+    --border-color: #43395c;
+    --border-subtle: #392f50;
+    --card-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.4), 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+    --lantern-glow: rgba(245, 201, 106, 0.5);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Star background sparkles */
+.star-twinkle {
+  animation: starTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.25; transform: scale(0.9); }
+  50% { opacity: 0.9; transform: scale(1.15); }
+  100% { opacity: 0.35; transform: scale(0.95); }
+}
+
+/* Gentle float for Pip and clouds */
+@keyframes cozyFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.8deg); }
+}
+
+.animate-cozy-float {
+  animation: cozyFloat 5s ease-in-out infinite;
+}
+
+/* Music box spinning gear effect */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
+
+/* Custom focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent-berry);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 16px;
+  background: #a34063;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Chaos mode playful styling */
+.chaos-active {
+  animation: rainbowBorder 8s linear infinite;
+}
+
+@keyframes rainbowBorder {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Dreamy breathing morph aura */
+@keyframes auraMorph {
+  0% {
+    transform: scale(0.92) rotate(0deg);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(0.92) rotate(0deg);
+    opacity: 0.65;
+  }
+}
+
+.animate-aura-morph {
+  animation: auraMorph 7s ease-in-out infinite;
+}
+
+/* Shimmer reflection traveling across elements */
+@keyframes shimmerReflection {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  animation: shimmerReflection 3.5s ease-in-out infinite;
+}
+
+/* Sound wave ripple rings for music box */
+@keyframes soundRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.animate-sound-ripple {
+  animation: soundRipple 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Soft hover float for cards */
+.hover-float {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-float:hover {
+  transform: translateY(-4px);
+}
+
+/* Hyper-smooth fluid 8-point organic blob morphing */
+@keyframes fluidBlobMorph {
+  0% {
+    border-radius: 62% 38% 54% 46% / 44% 59% 41% 56%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 39% 61% 33% 67% / 59% 36% 64% 41%;
+    transform: rotate(2.5deg) scale(1.03);
+  }
+  50% {
+    border-radius: 54% 46% 65% 35% / 41% 58% 42% 59%;
+    transform: rotate(-2deg) scale(0.97);
+  }
+  75% {
+    border-radius: 43% 57% 41% 59% / 63% 43% 57% 37%;
+    transform: rotate(1.5deg) scale(1.02);
+  }
+  100% {
+    border-radius: 62% 38% 54% 46% / 44% 59% 41% 56%;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-blob-morph {
+  animation: fluidBlobMorph 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: border-radius, transform;
+}
+
+.animate-blob-morph-fast {
+  animation: fluidBlobMorph 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: border-radius, transform;
+}
+
+/* Radiant 4-pointed star morph */
+@keyframes starBlossomMorph {
+  0% {
+    border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%;
+    transform: rotate(0deg) scale(0.95);
+  }
+  50% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    transform: rotate(45deg) scale(1.08);
+  }
+  100% {
+    border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%;
+    transform: rotate(90deg) scale(0.95);
+  }
+}
+
+.animate-star-morph {
+  animation: starBlossomMorph 10s ease-in-out infinite;
+}
+
+/* Crescent moon morph */
+@keyframes crescentMorph {
+  0%, 100% {
+    border-radius: 72% 28% 28% 72% / 62% 38% 62% 38%;
+    transform: rotate(-6deg);
+  }
+  50% {
+    border-radius: 60% 40% 40% 60% / 48% 52% 48% 52%;
+    transform: rotate(6deg) scale(1.05);
+  }
+}
+
+.animate-crescent-morph {
+  animation: crescentMorph 9s ease-in-out infinite;
+}
+
+/* Dream horizon wave morph */
+@keyframes waveMorph {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-4px) scaleY(1.08);
+  }
+}
+
+.animate-wave-morph {
+  animation: waveMorph 6s ease-in-out infinite;
+}
+
+/* Unreal continuous shape morphing between 6 distinct dream geometries */
+@keyframes unrealShapeMorph {
+  0% {
+    border-radius: 65% 35% 58% 42% / 48% 62% 38% 52%; /* Cloud */
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    border-radius: 72% 28% 28% 72% / 62% 38% 62% 38%; /* Crescent */
+    transform: rotate(-8deg) scale(1.04);
+  }
+  40% {
+    border-radius: 25% 75% 25% 75% / 75% 25% 75% 25%; /* Star */
+    transform: rotate(45deg) scale(0.97);
+  }
+  60% {
+    border-radius: 45% 45% 55% 55% / 35% 35% 65% 65%; /* Chalice */
+    transform: rotate(0deg) scale(1.02);
+  }
+  80% {
+    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; /* Dewdrop */
+    transform: rotate(12deg) scale(0.98);
+  }
+  100% {
+    border-radius: 65% 35% 58% 42% / 48% 62% 38% 52%; /* Return to Cloud */
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-unreal-morph {
+  animation: unrealShapeMorph 16s cubic-bezier(0.44, 0, 0.22, 1) infinite;
+  will-change: border-radius, transform;
+}
+
+/* Liquid spring wobble on hover/interaction */
+@keyframes liquidWobble {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.06, 0.94) rotate(-2deg); }
+  50% { transform: scale(0.95, 1.05) rotate(2deg); }
+  75% { transform: scale(1.02, 0.98) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.animate-liquid-wobble {
+  animation: liquidWobble 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Ethereal glowing halo pulse */
+@keyframes haloPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px -5px var(--accent-gold-soft), 0 0 50px -10px var(--lantern-glow);
+  }
+  50% {
+    box-shadow: 0 0 40px -2px var(--accent-gold), 0 0 80px -5px var(--lantern-glow);
+  }
+}
+
+.animate-halo-pulse {
+  animation: haloPulse 4s ease-in-out infinite;
+}
+
+/* Stardust floating drift */
+@keyframes floatUpFade {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-45px) scale(1.1) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-up-fade {
+  animation: floatUpFade 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Pip's Midnight Observatory",
+  "description": "Every little dream deserves a little light. An interactive character portfolio for Pip, Junior Dream Engineer at Midnight Nursery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
