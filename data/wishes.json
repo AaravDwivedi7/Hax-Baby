@@ -1,0 +1,62 @@
+[
+  {
+    "id": "wish-1792410055101-812",
+    "name": "Star Cadet Nova",
+    "wish": "May every restless baby find gentle slumber under the softest clouds.",
+    "timestamp": "11:40 AM",
+    "starColor": "#f5c96a",
+    "category": "Rest & Warmth",
+    "reactions": {
+      "sparkle": 1,
+      "heart": 1
+    }
+  },
+  {
+    "id": "wish-seed-1",
+    "name": "Barnaby the Dormouse",
+    "wish": "May the wind keep the chimney warm and all acorns stay sweet until spring.",
+    "timestamp": "11:42 PM",
+    "starColor": "#f5c96a",
+    "category": "Rest & Warmth",
+    "reactions": {
+      "sparkle": 14,
+      "heart": 8
+    }
+  },
+  {
+    "id": "wish-seed-2",
+    "name": "Oona the Owl",
+    "wish": "Wishing for gentle updrafts over the lake so my wings don’t tire before moonset.",
+    "timestamp": "12:05 AM",
+    "starColor": "#c7b6df",
+    "category": "Little Ones",
+    "reactions": {
+      "sparkle": 21,
+      "heart": 12
+    }
+  },
+  {
+    "id": "wish-seed-3",
+    "name": "Starlight Weaver",
+    "wish": "For every restless thinker to remember that tomorrow is fresh and kind.",
+    "timestamp": "1:14 AM",
+    "starColor": "#dba7b9",
+    "category": "Hope & Courage",
+    "reactions": {
+      "sparkle": 39,
+      "heart": 27
+    }
+  },
+  {
+    "id": "wish-seed-4",
+    "name": "Captain Flufftail",
+    "wish": "Soft cloud pillows for all the newborns crying their first teeth in.",
+    "timestamp": "2:30 AM",
+    "starColor": "#f5c96a",
+    "category": "Little Ones",
+    "reactions": {
+      "sparkle": 18,
+      "heart": 15
+    }
+  }
+]

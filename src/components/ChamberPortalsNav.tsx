@@ -109,7 +109,7 @@ export const ChamberPortalsNav: React.FC<{
   };
 
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-transparent via-[#fff8f1]/50 to-[#fdf6ec] dark:via-[#201d39]/50 dark:to-[#1a1730] border-t border-[#f0dfcf]/70 dark:border-[#43395c]/70">
+    <section id="chambers-gateway" className="py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-transparent via-[#fff8f1]/50 to-[#fdf6ec] dark:via-[#201d39]/50 dark:to-[#1a1730] border-t border-[#f0dfcf]/70 dark:border-[#43395c]/70">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f4d7df]/50 dark:bg-[#302847] text-[#a34063] dark:text-[#dba7b9] text-xs font-semibold uppercase tracking-wider mb-3 border border-[#f0dfcf] dark:border-[#43395c]">

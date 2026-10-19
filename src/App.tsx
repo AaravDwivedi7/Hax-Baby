@@ -15,6 +15,10 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { EasterEggModal } from './components/EasterEggModal';
 import { SparkleTrail } from './components/SparkleTrail';
+import { VisitorMemoryBadge } from './components/VisitorMemoryBadge';
+import { PipChatDrawer } from './components/PipChatDrawer';
+import { MessageCircle, Sparkles } from 'lucide-react';
+import { playUiChime } from './utils/soundEffects';
 
 // Dedicated Chamber Pages
 import { HomePage } from './pages/HomePage';
@@ -49,6 +53,7 @@ const AppContent: React.FC<AppContentProps> = ({
 }) => {
   const { isTransitioning, targetPageName, transitionMode } = usePageTransition();
   const location = useLocation();
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div
@@ -77,6 +82,12 @@ const AppContent: React.FC<AppContentProps> = ({
         onToggleMute={toggleMute}
         isChaos={isChaos}
         onToggleChaos={toggleChaos}
+      />
+
+      {/* Visitor Memory Recognition & Returning Stargazer Custom Greeting */}
+      <VisitorMemoryBadge
+        isMuted={isMuted}
+        onOpenChat={() => setIsChatOpen(true)}
       />
 
       {/* Chaos Mode Retro Indicator (if active) */}
@@ -121,6 +132,33 @@ const AppContent: React.FC<AppContentProps> = ({
         isMuted={isMuted}
         onToggleMute={toggleMute}
         onOpenEasterEgg={() => setIsEasterEggOpen(true)}
+      />
+
+      {/* Floating Character Chat Trigger Button */}
+      <aside aria-label="Observatory Communications">
+        <button
+          onClick={() => {
+            playUiChime(isMuted);
+            setIsChatOpen(true);
+          }}
+          aria-label="Chat with Pip the Junior Dream Engineer"
+          className="fixed bottom-5 right-5 z-40 px-4 py-3 rounded-full bg-[#a34063] hover:bg-[#8f3454] text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2.5 cursor-pointer border border-[#f5c96a]/40 group"
+        >
+          <div className="relative">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute -top-0.5 -right-0.5 ring-2 ring-[#a34063]" />
+            <MessageCircle className="w-5 h-5 text-[#f5c96a] group-hover:rotate-12 transition-transform" />
+          </div>
+          <span className="text-xs font-bold font-editorial tracking-wide">
+            Chat with Pip
+          </span>
+        </button>
+      </aside>
+
+      {/* Pip Interactive Chat Drawer */}
+      <PipChatDrawer
+        isMuted={isMuted}
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
       />
 
       {/* Hidden Easter Egg Modal */}
